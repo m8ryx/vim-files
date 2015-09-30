@@ -17,6 +17,7 @@ if isdirectory(vimdir)
   Plugin 'bling/vim-airline'
   Plugin 'flazz/vim-colorschemes'
   Plugin 'bronson/vim-trailing-whitespace'
+  Plugin 'ntpeters/vim-better-whitespace'
   Plugin 'Yggdroot/indentLine'
   Plugin 'justinmk/vim-gtfo'
   Plugin 'tomtom/tcomment_vim'
@@ -61,6 +62,7 @@ filetype on
 filetype indent on
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+au! BufNewFile,BufRead *.m set ft=mma sw=2
 
 " enable folding
 set foldenable
@@ -129,7 +131,8 @@ syntax on
 if isdirectory(vimdir)
   "colorscheme monokai
   "colorscheme mustang
-  colorscheme solarized
+  colorscheme apprentice
+  "colorscheme solarized
 endif
 
 " highlighting and autocomplete
@@ -348,8 +351,7 @@ augroup END
 augroup configgroup
     autocmd!
     autocmd VimEnter * highlight clear SignColumn
-    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
-                \:call <SID>StripTrailingWhitespaces()
+    autocmd FileType php,python,javascript,java,ruby,html autocmd BufWritePre <buffer> StripWhitespace
     autocmd FileType java setlocal noexpandtab
     autocmd FileType java setlocal list
     autocmd FileType java setlocal listchars=tab:+\ ,eol:-
