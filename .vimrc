@@ -26,6 +26,7 @@ if isdirectory(vimdir)
   Plugin 'tpope/vim-surround.git'
   Plugin 'rsmenon/vim-mathematica'
   Plugin 'Valloric/YouCompleteMe'
+  Plugin 'elixir-lang/vim-elixir'
   "Plugin 'sjl/gundo.vim'
 endif
 
