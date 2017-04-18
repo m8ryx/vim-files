@@ -1,3 +1,5 @@
+A lot of my .vimrc has been cobbled together from around the web. I've attempted to credit sources inside the file, but some were likely lost in antiquity. For getting started, a good source that I used heavily is https://dougblack.io/words/a-good-vimrc.html
+
 # vim-files
 my vim files excluding bundles, of which there are several
 
