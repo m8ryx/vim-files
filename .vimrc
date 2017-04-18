@@ -27,6 +27,7 @@ if isdirectory(vimdir)
   Plugin 'rsmenon/vim-mathematica'
   Plugin 'Valloric/YouCompleteMe'
   Plugin 'elixir-lang/vim-elixir'
+  Plugin 'vim-airline/vim-airline-themes'
   "Plugin 'sjl/gundo.vim'
 endif
 
@@ -130,9 +131,9 @@ endif
 
 syntax on
 if isdirectory(vimdir)
-  "colorscheme monokai
+  colorscheme monokai
   "colorscheme mustang
-  colorscheme apprentice
+  "colorscheme apprentice
   "colorscheme solarized
 endif
 
@@ -150,6 +151,7 @@ endif
 " set leader as comma (default \)
 let mapleader=","
 nnoremap <leader>tl :call ToggleNumber()<CR> " toggle line number
+nnoremap <leader>tr :call ToggleRelativeNumber()<CR> " toggle line number
 nnoremap <leader>s :mksession<CR> " save session - captures multiple windows
 nnoremap <leader>a :Ag " open ag.vim
 :nmap <leader>l :setlocal number!<CR>
@@ -273,7 +275,7 @@ if isdirectory(vimdir)
   " have it appear all the time
   set laststatus=2
   let g:airline_powerline_fonts=1
-  let g:airline_theme             = 'powerlineish'
+  let g:airline_theme             = 'cool'
 
   if isdirectory(expand("~/.vim/bundle/vim-airline/"))
     if !exists('g:airline_theme')
@@ -388,7 +390,7 @@ set writebackup
 " toggle between number and relativenumber
 "" http://dougblack.io/words/a-good-vimrc.html
 """"""""""""""""""""""""
-function! ToggleNumber()
+function! ToggleRelativeNumber()
     if(&relativenumber == 1)
         set norelativenumber
         set number
@@ -396,6 +398,15 @@ function! ToggleNumber()
         set relativenumber
     endif
 endfunc
+
+function! ToggleNumber()
+    if(&relativenumber == 1)
+      set norelativenumber
+    endif
+    set invnumber
+endfunc
+
+
 
 " nvie.com/posts/how-i-boosted-my-vim/
 function! ToggleMouse()
