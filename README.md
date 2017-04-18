@@ -23,8 +23,6 @@ It utilizes https://github.com/josephwecker/bashrc_dispatch to allow cross-platf
 
 I manage my shell files using vcsh, which is a super-cool way to have multiple git repos inside the same directory. It works nicely on both OS X and Linux.
 
-Here's how I set mine up.
-
 # vim-files
 
 A lot of my .vimrc has been cobbled together from around the web. I've attempted to credit sources inside the file, but some were likely lost in antiquity. For getting started, a good source that I used heavily is https://dougblack.io/words/a-good-vimrc.html. Also see https://github.com/spf13/spf13-vim.
